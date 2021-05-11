@@ -29,7 +29,7 @@ def right_arrow(all_images, selected_img, what_text):
             displayed_img.pop()
         #create a new image in the new index & display it
         new_img = all_images[img_idx[-1]]
-        selected_img = display_images(new_img)
+        selected_img = display_images(root, new_img) # pass the root ###
         displayed_img.append(selected_img)
         #update the new index on the interface
         what_text.set("image " + str(img_idx[-1] + 1) + " out of " + str(len(all_images)))
@@ -48,7 +48,7 @@ def left_arrow(all_images, selected_img, what_text):
             displayed_img.pop()
         #create a new image in the new index & display it
         new_img = all_images[img_idx[-1]]
-        selected_img = display_images(new_img)
+        selected_img = display_images(root, new_img)   # pass the root ###
         displayed_img.append(selected_img)
         #update the new index on the interface
         what_text.set("image " + str(img_idx[-1] + 1) + " out of " + str(len(all_images)))
@@ -108,7 +108,7 @@ def open_file():
 
         #BEGIN DISPLAYING
         #display the first image that was detected
-        selected_image = display_images(images[img_idx[-1]])
+        selected_image = display_images(root, images[img_idx[-1]])   # pass the root ###
         displayed_img.append(selected_image)
 
         #display the text found on the page
