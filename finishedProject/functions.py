@@ -41,10 +41,10 @@ def resize_image(img):
     return img
 
 #display an image on the interface after resizing it
-def display_images(img):
+def display_images(parent, img):  # parent is root ###
     img = resize_image(img)
     img = ImageTk.PhotoImage(img)
-    img_label = Label(image=img, bg="white")
+    img_label = Label(parent, image=img, bg="white") # parent is root ###
     img_label.image = img
     img_label.grid(row=4, column=2, rowspan=2)
     return img_label
